@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            background-color: white;
+            color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div>
+        <button onclick="toggleTheme()" > Dark Theme  </button>
+    </div>
+
+    <p id="para" onmouseover="mousehoverHandler()" onmouseout="mouseOutHandler()" >
+        Theme selectors
+    </p>
+
+    <input type="text" placeholder="Type something..." onkeyup="inputHandler(event)" />
+
+    <div>
+        <span id="check-1" > A Number  </span>
+        <span id="check-2" > A UpperCase  </span>
+        <span id="check-3" > A LowerCase  </span>
+        <span id="check-4" > A Special Character  </span>
+
+    </div>
+
+    <script>
+
+        function toggleTheme () {
+            const currentStyle = document.body.style
+            currentStyle.backgroundColor  = currentStyle.backgroundColor === 'white' || currentStyle.backgroundColor === ''   ? 'black' : 'white'
+            currentStyle.color  = currentStyle.color === 'white' || currentStyle.color === '' ? 'black' : 'white'
+        }
+
+        
+
+        function mousehoverHandler () {
+            const para = document.querySelector("#para");
+            para.style.color = 'red'
+        }
+
+        function mouseOutHandler () {
+            const para = document.querySelector("#para");
+            para.style.color = 'black'
+        }
+
+
+        function inputHandler (event) {
+            console.log("Triggered!", event.keyCode, event.target)
+
+            const inputValue  =  event.target.value
+            if( inputValue.match(/[0-9]/g) ){
+                document.querySelector("#check-1").style.textDecoration = 'line-through'
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>
