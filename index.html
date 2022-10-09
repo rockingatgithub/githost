@@ -72,7 +72,7 @@
 
 
         async function call () {
-            let res= await fetch('https://tempapi.proj.me/api/Z1n5aBqakz')
+            let res= await fetch('https://tempapi.proj.me/api/Z1n5aBqakz', {'Access-Control-Allow-Origin': '*'})
             let parsedRes = await res.json()
             console.log(parsedRes)
         }
