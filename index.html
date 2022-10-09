@@ -68,6 +68,17 @@
         }
 
 
+        // testing API
+
+
+        async function call () {
+            let res= await fetch('https://tempapi.proj.me/api/Z1n5aBqakz')
+            let parsedRes = await res.json()
+            console.log(parsedRes)
+        }
+        call()
+
+
 
     </script>
 
